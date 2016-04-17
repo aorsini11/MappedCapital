@@ -84,6 +84,7 @@ public class MapsActivity extends FragmentActivity implements GoogleMap.OnMarker
                 Button filterDate = (Button)popupView.findViewById(R.id.date_button);
                 Button filterCost = (Button) popupView.findViewById(R.id.cost_button);
                 Button filterType = (Button) popupView.findViewById(R.id.category_button);
+                Button clearFilters = (Button) popupView.findViewById(R.id.clear);
 
                 filterDate.setOnClickListener(new View.OnClickListener() {
                     @Override
@@ -119,6 +120,13 @@ public class MapsActivity extends FragmentActivity implements GoogleMap.OnMarker
                         EditText text = (EditText) popupView.findViewById(R.id.category_text);
                         ArrayList<Purchase> purchases = filter(allPurchases,"category",text.getText().toString());
                         loadMarkers(purchases);
+                    }
+                });
+
+                clearFilters.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        loadMarkers();
                     }
                 });
 
@@ -384,7 +392,7 @@ public class MapsActivity extends FragmentActivity implements GoogleMap.OnMarker
         ArrayList<Purchase> filteredPurchases = new ArrayList<Purchase>();
         for(int i=0;i<purchases.size();i++){
             if(filterType.equals("category")){
-                if(purchases.get(i).getDescription().equals(filterKey)){
+                if(purchases.get(i).getDescription().equalsIgnoreCase(filterKey)){
                     filteredPurchases.add(purchases.get(i));
                 }
             } else if(filterType.equals("purchaseDate")){
