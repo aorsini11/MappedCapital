@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:orientation="vertical"
+    android:background="@android:color/background_light">
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_margin="1dp"
+        android:background="@android:color/white">
+        >
+        <LinearLayout
+            android:layout_width="240dp"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_margin="20dp">
+            <TextView
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:textSize="20sp"
+                android:text="Options" />
+            <EditText
+            android:id="@+id/category_text"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:hint="Category" />
+            <Button
+                android:id="@+id/category_button"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:text="Filter By Category" />
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+                <EditText
+                    android:id="@+id/date1"
+                    android:layout_width="110dp"
+                    android:layout_height="wrap_content"
+                    android:hint="start" />
+                <EditText
+                    android:id="@+id/date2"
+                    android:layout_width="110dp"
+                    android:layout_height="wrap_content"
+                    android:hint="end" />
+            </LinearLayout>
+            <Button
+                android:id="@+id/date_button"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:text="Filter By Date" />
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+                <EditText
+                    android:id="@+id/cost1"
+                    android:layout_width="110dp"
+                    android:layout_height="wrap_content"
+                    android:hint="low" />
+                <EditText
+                    android:id="@+id/cost2"
+                    android:layout_width="110dp"
+                    android:layout_height="wrap_content"
+                    android:hint="high" />
+            </LinearLayout>
+            <Button
+                android:id="@+id/cost_button"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:text="Filter By Cost" />
+
+            <Button
+                android:id="@+id/clear"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:text="Clear Filters" />
+
+            <Button
+                android:id="@+id/dismiss"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:text="Dismiss" />
+        </LinearLayout>
+    </LinearLayout>
+</LinearLayout>
